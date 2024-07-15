@@ -13,9 +13,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${GeistSans.variable}`}>
       <body
-        className={`${GeistSans.variable} bg-background text-foreground dark pt-6`}
+        className={`bg-background text-foreground dark pt-6`}
         style={{ paddingInline: "var(--page-padding-x)" }}
       >
         {children}

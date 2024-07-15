@@ -1,3 +1,9 @@
+import { Navbar } from "./Navbar";
+
 export default function HomePage() {
-  return <main className="">hello</main>;
+  return (
+    <div className="">
+      <Navbar />
+    </div>
+  );
 }
