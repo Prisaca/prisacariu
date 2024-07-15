@@ -58,3 +58,7 @@
     --chart-5: ;
   }
 }
+
+:root {
+  --page-padding-x: min(2rem, 5vw);
+}
