@@ -1,6 +1,6 @@
-import { Text } from "@/components/atoms/text";
-import { Burger } from "@/components/icons/burger";
-import { Logo } from "@/components/icons/logo";
+import { Burger } from "@/atoms/icons/burger";
+import { Logo } from "@/atoms/icons/logo";
+import { Text } from "@/atoms/text";
 import Link from "next/link";
 
 export function Navbar() {

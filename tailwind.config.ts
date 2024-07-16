@@ -7,6 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ["var(--font-geist-sans)", ...fontFamily.sans],
+        monument: ["var(--font-monument)", ...fontFamily.sans],
       },
       colors: {
         background: "hsl(var(--background))",

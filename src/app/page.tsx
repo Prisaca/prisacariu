@@ -1,9 +1,17 @@
-import { Navbar } from "./Navbar";
+import { CtaSection } from "./cta-section";
+import { Hero } from "./hero";
+import { Navbar } from "./navbar";
+import { Projects } from "./projects";
 
 export default function HomePage() {
   return (
-    <div className="">
+    <>
       <Navbar />
-    </div>
+      <main>
+        <Hero />
+        <Projects />
+        <CtaSection />
+      </main>
+    </>
   );
 }
