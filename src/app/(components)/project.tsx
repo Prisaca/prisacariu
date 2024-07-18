@@ -25,7 +25,11 @@ export type Project = {
 
 export function Project(props: Project) {
   return (
-    <article className={clsx("md:border-b-foreground flex flex-col-reverse md:grid md:grid-cols-2 md:border-b-[2px]")}>
+    <article
+      className={clsx(
+        "animation-parent md:border-b-foreground flex flex-col-reverse md:grid md:grid-cols-2 md:border-b-[2px]",
+      )}
+    >
       <div className="md:border-r-foreground flex flex-col justify-between py-8 md:border-r-[1px]">
         {/* top */}
         <div className="flex flex-row justify-between">
@@ -41,20 +45,25 @@ export function Project(props: Project) {
               {props.title}
             </Text>
           </div>
-          <Link
-            href={props.link.href}
-            target={props.link.openInNewTab ? "_blank" : "_self"}
-            className="flex flex-col items-end gap-1 p-4 pr-0 pt-0 md:gap-3 md:pr-8 [&>svg]:h-4 [&>svg]:w-4 md:[&>svg]:h-8 md:[&>svg]:w-8"
-          >
-            <Arrow />
-            <Text
-              as="p"
-              style="tag"
-              className="font-monument w-[min-content] text-right text-[0.4rem] leading-[1.4em] md:text-[0.6rem]"
+          <div className="animated-button animated-arrow">
+            <Link
+              href={props.link.href}
+              target={props.link.openInNewTab ? "_blank" : "_self"}
+              className="flex flex-col items-end gap-1 p-4 pr-0 pt-0 md:gap-3 md:pr-8 [&>svg]:h-4 [&>svg]:w-4 md:[&>svg]:h-8 md:[&>svg]:w-8"
             >
-              GO TO WEBSITE
-            </Text>
-          </Link>
+              <Arrow />
+              <div className="animated-button-content">
+                <Text
+                  as="p"
+                  style="tag"
+                  className="font-monument w-[min-content] text-right text-[0.4rem] leading-[1.4em] md:text-[0.6rem]"
+                >
+                  GO TO WEBSITE
+                </Text>
+                <p></p>
+              </div>
+            </Link>
+          </div>
         </div>
         {/* bottom */}
         <ul className="grid max-w-[80%] grid-cols-2 gap-x-4 gap-y-8 pt-8 md:max-w-full md:grid-cols-3 md:gap-16 md:pr-8 md:pt-0">
@@ -86,17 +95,19 @@ export function Project(props: Project) {
         href={props.link.href}
         target={props.link.openInNewTab ? "_blank" : "_self"}
       >
-        <Image
-          src={props.image.src}
-          alt={props.image.alt}
-          height={props.image.height * 2}
-          width={props.image.width * 2}
-          sizes="(min-width: 1024px) 50vw, 100vw"
-          style={{
-            aspectRatio: `${props.image.width} / ${props.image.height}`,
-          }}
-          className="md:border-l-foreground h-[15rem] object-cover md:h-[750px] md:border-l-[1px]"
-        />
+        <div className="animated-project-image">
+          <Image
+            src={props.image.src}
+            alt={props.image.alt}
+            height={props.image.height * 2}
+            width={props.image.width * 2}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            style={{
+              aspectRatio: `${props.image.width} / ${props.image.height}`,
+            }}
+            className="md:border-l-foreground h-[15rem] object-cover md:h-[750px] md:border-l-[1px]"
+          />
+        </div>
       </Link>
     </article>
   );
