@@ -13,30 +13,61 @@ export function CtaSection() {
         <span>COOL HAPPEN!</span>
       </Text>
       <div className="grid gap-0 pt-4 md:grid-cols-6 md:gap-16 md:pt-24">
-        <button className="py-2 pr-4 text-left md:col-span-2 md:py-4">
-          <Text
-            as="p"
-            style="tag"
-            className="text-secondary-foreground font-light opacity-75 md:text-sm"
+        <div className="animated-button">
+          <Link
+            href="mailto:sebastian@prisacariu.com"
+            className="block py-2 pr-4 text-left md:col-span-2 md:py-4"
           >
-            Email me
-          </Text>
-          <Text as="p" style="tag" className="pt-1 font-light md:text-sm">
-            sebastian@prisacariu.com
-          </Text>
-        </button>
-        <button className="py-2 pr-4 text-left md:py-4">
-          <Text
-            as="p"
-            style="tag"
-            className="text-secondary-foreground font-light opacity-75 md:text-sm"
+            <Text
+              as="p"
+              style="tag"
+              className="text-secondary-foreground font-light opacity-75 md:text-sm"
+            >
+              Email me
+            </Text>
+            <div className="animated-button-content">
+              <Text as="p" style="tag" className="pt-1 font-light md:text-sm">
+                sebastian@prisacariu.com
+              </Text>
+              <Text
+                as="p"
+                style="tag"
+                className="pt-1 font-light md:text-sm"
+                aria-hidden
+              >
+                sebastian@prisacariu.com
+              </Text>
+            </div>
+          </Link>
+        </div>
+        <div className="animated-button">
+          <Link
+            href="tel:+4794448582"
+            className="block py-2 pr-4 text-left md:py-4"
           >
-            Give me a call
-          </Text>
-          <Text as="p" style="tag" className="pt-1 font-light md:text-sm">
-            +47 944 48 582
-          </Text>
-        </button>
+            <Text
+              as="p"
+              style="tag"
+              className="text-secondary-foreground font-light opacity-75 md:text-sm"
+            >
+              Give me a call
+            </Text>
+            <div className="animated-button-content">
+              <Text as="p" style="tag" className="pt-1 font-light md:text-sm">
+                +47 944 48 582
+              </Text>
+              <Text
+                as="p"
+                style="tag"
+                className="pt-1 font-light md:text-sm"
+                aria-hidden
+              >
+                +47 944 48 582
+              </Text>
+            </div>
+          </Link>
+        </div>
+
         <div className="py-2 pr-4 text-left md:col-span-3 md:py-4">
           <Text
             as="p"
@@ -46,22 +77,46 @@ export function CtaSection() {
             Reach out to me on
           </Text>
           <div className="flex gap-6 pt-1">
-            <Link
-              href="https://www.linkedin.com/in/sebastian-prisacariu-71b74b162"
-              target="_blank"
-            >
-              <Text as="p" style="tag" className="font-light md:text-sm">
-                LinkedIn
-              </Text>
-            </Link>
-            <Link
-              href="https://www.instagram.com/s_prisacariu/"
-              target="_blank"
-            >
-              <Text as="p" style="tag" className="font-light md:text-sm">
-                Instagram
-              </Text>
-            </Link>
+            <div className="animated-button">
+              <Link
+                href="https://www.linkedin.com/in/sebastian-prisacariu-71b74b162"
+                target="_blank"
+              >
+                <div className="animated-button-content">
+                  <Text as="p" style="tag" className="font-light md:text-sm">
+                    LinkedIn
+                  </Text>
+                  <Text
+                    as="p"
+                    style="tag"
+                    className="font-light md:text-sm"
+                    aria-hidden
+                  >
+                    LinkedIn
+                  </Text>
+                </div>
+              </Link>
+            </div>
+            <div className="animated-button">
+              <Link
+                href="https://www.instagram.com/s_prisacariu/"
+                target="_blank"
+              >
+                <div className="animated-button-content">
+                  <Text as="p" style="tag" className="font-light md:text-sm">
+                    Instagram
+                  </Text>
+                  <Text
+                    as="p"
+                    style="tag"
+                    className="font-light md:text-sm"
+                    aria-hidden
+                  >
+                    Instagram
+                  </Text>
+                </div>
+              </Link>
+            </div>
           </div>
         </div>
       </div>

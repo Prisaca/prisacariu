@@ -60,7 +60,7 @@ export function Project(props: Project) {
                 >
                   GO TO WEBSITE
                 </Text>
-                <p></p>
+                <p aria-hidden></p>
               </div>
             </Link>
           </div>

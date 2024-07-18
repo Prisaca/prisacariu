@@ -1,5 +1,6 @@
 import { Text } from "@/atoms/text";
 import Image from "next/image";
+import Link from "next/link";
 
 export function Hero() {
   return (
@@ -74,7 +75,10 @@ export function Hero() {
           <span>{"WEB DEVELOPER, DESIGNER"}</span>
           <span>{"AND STRATEGIST*"}</span>
         </Text>
-        <button className="mt-4 py-4 pr-4 text-left md:mt-44">
+        <Link
+          href="mailto:sebastian@prisacariu.com"
+          className="mt-4 block py-4 pr-4 text-left md:mt-44"
+        >
           <div className="animated-button">
             <Text
               as="p"
@@ -87,12 +91,17 @@ export function Hero() {
               <Text as="p" style="tag" className="pt-1 font-light md:text-sm">
                 sebastian@prisacariu.com
               </Text>
-              <Text as="p" style="tag" className="pt-1 font-light md:text-sm">
+              <Text
+                as="p"
+                style="tag"
+                className="pt-1 font-light md:text-sm"
+                aria-hidden
+              >
                 sebastian@prisacariu.com
               </Text>
             </div>
           </div>
-        </button>
+        </Link>
       </section>
     </section>
   );
