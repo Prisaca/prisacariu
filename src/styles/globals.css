@@ -62,3 +62,42 @@
 :root {
   --page-padding-x: min(2rem, 5vw);
 }
+
+.animated-button {
+  position: relative;
+  & .animated-button-content {
+    & > * {
+      transition:
+        all 100ms ease,
+        transform 150ms ease,
+        opacity 75ms ease;
+    }
+    & > *:first-child {
+      transition-delay: 120ms;
+    }
+    & > *:last-child {
+      position: absolute;
+      transition-delay: 10ms;
+      opacity: 0;
+      transform: rotateX(-90deg);
+    }
+  }
+
+  &:hover {
+    & .animated-button-content {
+      position: relative;
+      perspective: 50px;
+      & > *:first-child {
+        transform: translateY(-100%) rotateX(90deg);
+        rotate: -30%;
+        opacity: 0;
+        transition-delay: 10ms;
+      }
+      & > *:last-child {
+        transform: translateY(-100%) rotateX(0deg);
+        transition-delay: 100ms;
+        opacity: 1;
+      }
+    }
+  }
+}

@@ -109,16 +109,19 @@ export function Projects() {
     <section id="recent-projects" className="pb-20">
       <div
         id="recent-projects-head"
-        className="flex flex-col gap-6 pb-6 md:pb-0"
+        className="flex flex-col gap-4 pb-6 md:pb-0"
       >
-        <div className="bg-foreground hidden h-[2px] w-full rounded-full md:block" />
-        <h2 className="font-monument md:text-center text-[3vw] uppercase leading-[1.4em] md:text-[1.125vw]">
-          *Recent works*
+        <h2 className="font-monument text-[3vw] uppercase leading-[1.4em] md:text-right md:text-[1.125vw]">
+          Recent works
         </h2>
         <div className="bg-foreground hidden h-[2px] w-full rounded-full md:block" />
       </div>
       {articles.map((article, index) => (
-        <Project key={index} index={index} {...article} />
+        <Project
+          key={index}
+          index={index}
+          {...article}
+        />
       ))}
     </section>
   );

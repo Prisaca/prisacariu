@@ -4,16 +4,16 @@ import Link from "next/link";
 
 export function CtaSection() {
   return (
-    <section id="main-cta-section" className="py-24">
+    <section id="main-cta-section" className="md:py-24">
       <Logo type="icon" />
-      <Text as="h2" style="display-2" className="pt-12 [&>*]:block">
+      <Text as="h2" style="display-2" className="pt-4 md:pt-12 [&>*]:block">
         <span>THIS IS THE PART WHERE</span>
         <span>YOU GET IN TOUCH AND</span>
         <span>WE MAKE SOMETHING</span>
         <span>COOL HAPPEN!</span>
       </Text>
-      <div className="grid gap-16 pt-24 md:grid-cols-6">
-        <button className="col-span-2 py-4 pr-4 text-left">
+      <div className="grid gap-0 pt-4 md:grid-cols-6 md:gap-16 md:pt-24">
+        <button className="py-2 pr-4 text-left md:col-span-2 md:py-4">
           <Text
             as="p"
             style="tag"
@@ -25,7 +25,7 @@ export function CtaSection() {
             sebastian@prisacariu.com
           </Text>
         </button>
-        <button className="py-4 pr-4 text-left">
+        <button className="py-2 pr-4 text-left md:py-4">
           <Text
             as="p"
             style="tag"
@@ -37,7 +37,7 @@ export function CtaSection() {
             +47 944 48 582
           </Text>
         </button>
-        <div className="col-span-3 py-4 pr-4 text-left">
+        <div className="py-2 pr-4 text-left md:col-span-3 md:py-4">
           <Text
             as="p"
             style="tag"

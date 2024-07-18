@@ -2,7 +2,6 @@ export function NameXL() {
   return (
     <svg
       width="1603"
-      height="351"
       viewBox="0 0 1603 351"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

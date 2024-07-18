@@ -1,5 +1,6 @@
 import { Arrow } from "@/atoms/icons/arrow";
 import { Text } from "@/atoms/text";
+import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -24,7 +25,7 @@ export type Project = {
 
 export function Project(props: Project) {
   return (
-    <article className="md:border-b-foreground flex flex-col-reverse md:grid md:grid-cols-2 md:border-b-[2px]">
+    <article className={clsx("md:border-b-foreground flex flex-col-reverse md:grid md:grid-cols-2 md:border-b-[2px]")}>
       <div className="md:border-r-foreground flex flex-col justify-between py-8 md:border-r-[1px]">
         {/* top */}
         <div className="flex flex-row justify-between">

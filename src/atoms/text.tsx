@@ -10,7 +10,7 @@ export const textVariants = cva("", {
       "display-1":
         "text-[9.5vw] font-monument tracking-tighter leading-[1em] font-normal ml-[-0.07em]",
       "display-2":
-        "text-[3.75vw] font-monument tracking-[-0.02em] leading-[1em] font-normal ml-[-0.07em]",
+        "text-[5vw] md:text-[3.75vw] font-monument tracking-[-0.02em] md:leading-[1.1em] font-normal ml-[-0.07em]",
       "display-3":
         "text-[4vw] md:text-[2vw] font-monument leading-[1.31em] font-normal ml-[-0.07em]",
       "display-4":

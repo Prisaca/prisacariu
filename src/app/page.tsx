@@ -1,8 +1,8 @@
-import { CtaSection } from "./cta-section";
-import { Footer } from "./footer";
-import { Hero } from "./hero";
-import { Navbar } from "./navbar";
-import { Projects } from "./projects";
+import { CtaSection } from "./(components)/cta-section";
+import { Footer } from "./(components)/footer";
+import { Hero } from "./(components)/hero";
+import { Navbar } from "./(components)/navbar";
+import { Projects } from "./(components)/projects";
 
 export default function HomePage() {
   return (

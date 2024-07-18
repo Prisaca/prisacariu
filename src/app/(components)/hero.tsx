@@ -74,17 +74,24 @@ export function Hero() {
           <span>{"WEB DEVELOPER, DESIGNER"}</span>
           <span>{"AND STRATEGIST*"}</span>
         </Text>
-        <button className="mt-16 py-4 pr-4 text-left md:mt-44">
-          <Text
-            as="p"
-            style="tag"
-            className="text-secondary-foreground font-light opacity-75 md:text-sm"
-          >
-            Email me
-          </Text>
-          <Text as="p" style="tag" className="pt-1 font-light md:text-sm">
-            sebastian@prisacariu.com
-          </Text>
+        <button className="mt-4 py-4 pr-4 text-left md:mt-44">
+          <div className="animated-button">
+            <Text
+              as="p"
+              style="tag"
+              className="text-secondary-foreground font-light opacity-75 md:text-sm"
+            >
+              Email me
+            </Text>
+            <div className="animated-button-content">
+              <Text as="p" style="tag" className="pt-1 font-light md:text-sm">
+                sebastian@prisacariu.com
+              </Text>
+              <Text as="p" style="tag" className="pt-1 font-light md:text-sm">
+                sebastian@prisacariu.com
+              </Text>
+            </div>
+          </div>
         </button>
       </section>
     </section>
