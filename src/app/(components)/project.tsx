@@ -101,7 +101,7 @@ export function Project(props: Project) {
             alt={props.image.alt}
             height={props.image.height * 2}
             width={props.image.width * 2}
-            sizes="(min-width: 1024px) 50vw, 100vw"
+            sizes="(min-width: 768px) 50vw, 100vw"
             style={{
               aspectRatio: `${props.image.width} / ${props.image.height}`,
             }}

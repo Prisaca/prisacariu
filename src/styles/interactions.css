@@ -1,0 +1,111 @@
+
+.animated-button {
+  position: relative;
+  & .animated-button-content {
+    & > * {
+      transform: translateZ(5px);
+      pointer-events: none;
+      transition:
+        transform 150ms ease-in-out,
+        opacity 100ms ease-in-out;
+    }
+    & > *:first-child {
+      transition-delay: 120ms;
+    }
+    & > *:last-child {
+      position: absolute;
+      transition-delay: 10ms;
+      opacity: 0;
+      transform: rotateX(-90deg);
+    }
+  }
+
+  @media (min-width: 768px) {
+    &:hover {
+      & .animated-button-content {
+        position: relative;
+        perspective: 50px;
+        & > *:first-child {
+          transform: translateY(-100%) rotateX(90deg);
+          opacity: 0;
+          transition-delay: 10ms;
+        }
+        & > *:last-child {
+          transform: translateY(-100%) rotateX(0deg);
+          transition-delay: 100ms;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.animated-arrow {
+  & svg {
+    transition: transform 300ms ease;
+  }
+  @media (min-width: 768px) {
+    &:hover {
+      & svg {
+        transform: translateX(0.75rem) translateY(-0.75rem) scale(1.25);
+      }
+    }
+  }
+}
+
+.animated-project-image {
+  overflow: hidden;
+  transition: all 300ms ease-in-out;
+
+  & img {
+    transition: all 450ms ease;
+  }
+
+  @media (min-width: 768px) {
+    &:hover {
+      border-radius: 25%;
+
+      & img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .animation-parent {
+    &:has(.animated-project-image:hover) {
+      & .animated-arrow {
+        & svg {
+          transform: translateX(0.75rem) translateY(-0.75rem) scale(1.25);
+        }
+      }
+      & .animated-button {
+        & .animated-button-content {
+          position: relative;
+          perspective: 50px;
+          & > *:first-child {
+            transform: translateY(-100%) rotateX(90deg);
+            opacity: 0;
+            transition-delay: 10ms;
+          }
+          & > *:last-child {
+            transform: translateY(-100%) rotateX(0deg);
+            transition-delay: 100ms;
+            opacity: 1;
+          }
+        }
+      }
+    }
+
+    &:has(.animated-button:hover) {
+      & .animated-project-image {
+        border-radius: 25%;
+
+        & img {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

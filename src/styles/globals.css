@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+@import "./lenis.css";
+@import "./interactions.css";
+@import "./animations.css";
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -24,152 +28,22 @@
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0rem;
-    --chart-1: ;
-    --chart-2: ;
-    --chart-3: ;
-    --chart-4: ;
-    --chart-5: ;
   }
 
   .dark {
     --background: 0 0% 32%;
     --foreground: 0 0% 94%;
-    --card: ;
-    --card-foreground: ;
-    --popover: ;
-    --popover-foreground: ;
     --primary: 0 0% 32%;
     --primary-foreground: 0 0% 94%;
-    --secondary: ;
     --secondary-foreground: 0 0% 73%;
-    --muted: ;
-    --muted-foreground: ;
-    --accent: ;
-    --accent-foreground: ;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 240 4.9% 83.9%;
-    --chart-1: ;
-    --chart-2: ;
-    --chart-3: ;
-    --chart-4: ;
-    --chart-5: ;
   }
 }
 
 :root {
   --page-padding-x: min(2rem, 5vw);
-}
-
-.animated-button {
-  position: relative;
-  & .animated-button-content {
-    & > * {
-      transform: translateZ(5px);
-      pointer-events: none;
-      transition:
-        transform 150ms ease-in-out,
-        opacity 100ms ease-in-out;
-    }
-    & > *:first-child {
-      transition-delay: 120ms;
-    }
-    & > *:last-child {
-      position: absolute;
-      transition-delay: 10ms;
-      opacity: 0;
-      transform: rotateX(-90deg);
-    }
-  }
-
-  @media (min-width: 768px) {
-    &:hover {
-      & .animated-button-content {
-        position: relative;
-        perspective: 50px;
-        & > *:first-child {
-          transform: translateY(-100%) rotateX(90deg);
-          opacity: 0;
-          transition-delay: 10ms;
-        }
-        & > *:last-child {
-          transform: translateY(-100%) rotateX(0deg);
-          transition-delay: 100ms;
-          opacity: 1;
-        }
-      }
-    }
-  }
-}
-
-.animated-arrow {
-  & svg {
-    transition: transform 300ms ease;
-  }
-  @media (min-width: 768px) {
-    &:hover {
-      & svg {
-        transform: translateX(0.75rem) translateY(-0.75rem) scale(1.25);
-      }
-    }
-  }
-}
-
-.animated-project-image {
-  overflow: hidden;
-  transition: all 300ms ease-in-out;
-
-  & img {
-    transition: all 450ms ease;
-  }
-
-  @media (min-width: 768px) {
-    &:hover {
-      border-radius: 25%;
-
-      & img {
-        transform: scale(1.1);
-      }
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .animation-parent {
-    &:has(.animated-project-image:hover) {
-      & .animated-arrow {
-        & svg {
-          transform: translateX(0.75rem) translateY(-0.75rem) scale(1.25);
-        }
-      }
-      & .animated-button {
-        & .animated-button-content {
-          position: relative;
-          perspective: 50px;
-          & > *:first-child {
-            transform: translateY(-100%) rotateX(90deg);
-            opacity: 0;
-            transition-delay: 10ms;
-          }
-          & > *:last-child {
-            transform: translateY(-100%) rotateX(0deg);
-            transition-delay: 100ms;
-            opacity: 1;
-          }
-        }
-      }
-    }
-
-    &:has(.animated-button:hover) {
-      & .animated-project-image {
-        border-radius: 25%;
-
-        & img {
-          transform: scale(1.1);
-        }
-      }
-    }
-  }
 }

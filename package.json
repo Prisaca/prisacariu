@@ -14,9 +14,11 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "geist": "^1.3.1",
+    "locomotive-scroll": "beta",
     "next": "^14.2.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "usehooks-ts": "^3.1.0",
     "zod": "^3.23.3"
   },
   "devDependencies": {

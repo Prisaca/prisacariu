@@ -3,7 +3,12 @@ import { Text } from "@/atoms/text";
 
 export function Footer() {
   return (
-    <footer className="pb-2 pt-24 md:pt-32 md:pb-8">
+    <footer
+      className="footer pb-2 pt-24 md:pb-8 md:pt-32"
+      data-scroll
+      data-scroll-offset="25%,10%"
+      data-scroll-class="footer__inview"
+    >
       <h2 className="pb-8 md:pb-0">
         <NameXL />
         <span className="sr-only">Sebastian Prisacariu</span>

@@ -4,7 +4,13 @@ import Link from "next/link";
 
 export function CtaSection() {
   return (
-    <section id="main-cta-section" className="md:py-24">
+    <section
+      id="main-cta-section"
+      className="cta-section md:py-24"
+      data-scroll
+      data-scroll-offset="35%,50%"
+      data-scroll-class="cta-section__inview"
+    >
       <Logo type="icon" />
       <Text as="h2" style="display-2" className="pt-4 md:pt-12 [&>*]:block">
         <span>THIS IS THE PART WHERE</span>

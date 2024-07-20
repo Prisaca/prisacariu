@@ -106,7 +106,11 @@ const articles = [
 
 export function Projects() {
   return (
-    <section id="recent-projects" className="pb-20">
+    <section
+      id="recent-projects"
+      className="pb-20"
+
+    >
       <div
         id="recent-projects-head"
         className="flex flex-col gap-4 pb-6 md:pb-0"
@@ -117,11 +121,7 @@ export function Projects() {
         <div className="bg-foreground hidden h-[2px] w-full rounded-full md:block" />
       </div>
       {articles.map((article, index) => (
-        <Project
-          key={index}
-          index={index}
-          {...article}
-        />
+        <Project key={index} index={index} {...article} />
       ))}
     </section>
   );
