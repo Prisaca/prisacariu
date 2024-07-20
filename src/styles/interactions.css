@@ -1,6 +1,7 @@
 
 .animated-button {
   position: relative;
+  width: fit-content;
   & .animated-button-content {
     & > * {
       transform: translateZ(5px);

@@ -38,7 +38,19 @@
 
 .appear {
   opacity: 0;
-  animation: appear 1s ease-out forwards;
+
+  @media (max-width: 767px) {
+    animation: appear 0.5s ease-out forwards;
+  }
+  &.active {
+    animation: appear 0.5s ease-out forwards;
+  }
+
+  &.hero-image-appear {
+    animation-delay: 1.5s;
+    animation: appearFromBottom 0.5s cubic-bezier(0.19, 0.5, 0.41, 0.96)
+      forwards;
+  }
 }
 
 @keyframes appear {
@@ -51,4 +63,49 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  .staggered-letter-word {
+    overflow: hidden;
+    padding-bottom: 0.1em;
+    margin-bottom: -0.1em;
+    transform-origin: bottom;
+    display: inline-block;
+  }
+
+  /* best for single words on display titles */
+  .stagger-animation {
+    @media (min-width: 768px) {
+      & .staggered-letter-word {
+        transform: translateY(100%);
+      }
+    }
+
+    &.active .staggered-letter-word {
+      animation: letterSlideUp 0.5s cubic-bezier(0.19, 0.5, 0.41, 0.96) forwards;
+      animation-delay: calc(
+        500ms + var(--staggered-sentence) * var(--stagger-length) *
+          var(--stagger-length) * 3ms + var(--stagger-index) * 60ms
+      );
+    }
+  }
+
+  /* best for paragraphs */
+  .stagger-animation-long {
+    &.active .staggered-letter-word {
+      animation-duration: 0.3s;
+      animation-delay: calc(
+        var(--staggered-sentence) * 25ms + var(--staggered-sentence) *
+          var(--stagger-length) * var(--stagger-length) * 0.75ms +
+          var(--stagger-index) * 30ms
+      );
+    }
+  }
+}
+
+@keyframes letterSlideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }

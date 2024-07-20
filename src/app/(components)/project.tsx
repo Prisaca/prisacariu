@@ -36,12 +36,12 @@ export function Project(props: Project) {
           <div>
             <Text
               as="p"
-              style="tag"
+              styledAs="tag"
               className="text-secondary-foreground font-monument leading-[1.4em] opacity-75"
             >
               PROJECT #{props.index + 1}
             </Text>
-            <Text as="h3" style="display-3" className="pt-1">
+            <Text as="h3" styledAs="display-3" className="pt-1">
               {props.title}
             </Text>
           </div>
@@ -55,7 +55,7 @@ export function Project(props: Project) {
               <div className="animated-button-content">
                 <Text
                   as="p"
-                  style="tag"
+                  styledAs="tag"
                   className="font-monument w-[min-content] text-right text-[0.4rem] leading-[1.4em] md:text-[0.6rem]"
                 >
                   GO TO WEBSITE
@@ -71,7 +71,7 @@ export function Project(props: Project) {
             <li key={index} className={index < 2 ? "" : "md:row-start-2"}>
               <Text
                 as="p"
-                style="tag"
+                styledAs="tag"
                 className={
                   "text-secondary-foreground font-monument text-[0.4rem] leading-[1.4em] opacity-75 md:text-[0.6rem]"
                 }
@@ -80,7 +80,7 @@ export function Project(props: Project) {
               </Text>
               <Text
                 as="p"
-                style="display-4"
+                styledAs="display-4"
                 className="pt-1 md:pt-4 [&>*]:block"
               >
                 {answer.answers.map((text, index) => (

@@ -1,4 +1,5 @@
 import { Text } from "@/atoms/text";
+import { WordByLetter } from "@/atoms/word-by-letter";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,54 +15,62 @@ export function Hero() {
     <section id="hero" className="py-20 md:pb-0">
       <section id="main-hero" className="">
         <div id="main-hero-title" className="grid">
-          <h1 className="grid md:grid-cols-6">
+          <h1 className="stagger-animation active grid md:grid-cols-6">
             <Text
-              as="span"
-              style="display-1"
-              className="block md:col-span-6 md:col-start-1 md:text-right"
+              as="div"
+              styledAs="display-1"
+              // @ts-expect-error custom property
+              style={{ "--staggered-sentence": 0 }}
+              className="block overflow-hidden whitespace-nowrap md:col-span-6 md:col-start-1 md:text-right"
               data-scroll
               data-scroll-speed={
                 config.hero_titles.base_speed +
                 config.hero_titles.stagger_speed * 0
               }
             >
-              CRAFTING
+              <WordByLetter>CRAFTING</WordByLetter>
             </Text>
             <Text
-              as="span"
-              style="display-1"
-              className="block md:col-span-6 md:col-start-1"
+              as="div"
+              styledAs="display-1"
+              // @ts-expect-error custom property
+              style={{ "--staggered-sentence": 1 }}
+              className="block overflow-hidden whitespace-nowrap md:col-span-6 md:col-start-1"
               data-scroll
               data-scroll-speed={
                 config.hero_titles.base_speed +
                 config.hero_titles.stagger_speed * 1
               }
             >
-              SEAMLESS
+              <WordByLetter>SEAMLESS</WordByLetter>
             </Text>
             <Text
-              as="span"
-              style="display-1"
-              className="block md:col-span-2 md:col-start-4"
+              as="div"
+              styledAs="display-1"
+              // @ts-expect-error custom property
+              style={{ "--staggered-sentence": 2 }}
+              className="block w-[max-content] overflow-hidden whitespace-nowrap md:col-span-2 md:col-start-4"
               data-scroll
               data-scroll-speed={
                 config.hero_titles.base_speed +
                 config.hero_titles.stagger_speed * 2
               }
             >
-              DIGITAL
+              <WordByLetter>DIGITAL</WordByLetter>
             </Text>
             <Text
-              as="span"
-              style="display-1"
-              className="block md:col-span-5 md:col-start-2"
+              as="div"
+              styledAs="display-1"
+              // @ts-expect-error custom property
+              style={{ "--staggered-sentence": 3 }}
+              className="block w-[max-content] overflow-hidden whitespace-nowrap md:col-span-5 md:col-start-2"
               data-scroll
               data-scroll-speed={
                 config.hero_titles.base_speed +
                 config.hero_titles.stagger_speed * 3
               }
             >
-              PRODUCTS
+              <WordByLetter>PRODUCTS</WordByLetter>
             </Text>
           </h1>
         </div>
@@ -77,26 +86,32 @@ export function Hero() {
             width={725}
             height={725 * 1.25}
             style={{ aspectRatio: "725 / 910" }}
-            className="max-w-[100%] overflow-hidden object-cover md:w-[50%]"
+            className="appear hero-image-appear max-w-[100%] overflow-hidden object-cover md:w-[50%]"
             sizes="(min-width: 768px) 50vw, 100vw"
           />
           <button className="relative hidden h-[1ch] w-[1ch] md:block">
             <Text
               as="p"
-              style="tag"
+              styledAs="tag"
               className="absolute inset-0 -left-[5rem] w-[10rem] rotate-90 text-center text-[0.75rem]"
             >
               SCROLL DOWN
             </Text>
           </button>
         </section>
-        <section id="main-hero-body" className="mt-4 md:mt-6 md:w-[50%]">
+        <section
+          id="main-hero-body"
+          className="appear mt-4 md:mt-6 md:w-[50%]"
+          data-scroll
+          data-scroll-offset="20%,20%"
+          data-scroll-class="active"
+        >
           <p className="font-monument text-secondary-foreground text-[3vw] leading-[1.4em] md:text-right md:text-[1.125vw]">
             Hey there!
           </p>
           <Text
             as="h2"
-            style="display-3"
+            styledAs="display-3"
             className="pt-2 md:pt-3 md:text-right [&>*]:block"
           >
             <span>{"*I’M SEBASTIAN, A FULLSTACK"}</span>
@@ -106,23 +121,30 @@ export function Hero() {
         </section>
         <Link
           href="mailto:sebastian@prisacariu.com"
-          className="mt-4 block py-4 pr-4 text-left md:mt-44"
+          className="appear mt-4 block py-4 pr-4 text-left md:mt-44"
+          data-scroll
+          data-scroll-offset="50px,10%"
+          data-scroll-class="active"
         >
           <div className="animated-button">
             <Text
               as="p"
-              style="tag"
+              styledAs="tag"
               className="text-secondary-foreground font-light opacity-75 md:text-sm"
             >
               Email me
             </Text>
             <div className="animated-button-content">
-              <Text as="p" style="tag" className="pt-1 font-light md:text-sm">
+              <Text
+                as="p"
+                styledAs="tag"
+                className="pt-1 font-light md:text-sm"
+              >
                 sebastian@prisacariu.com
               </Text>
               <Text
                 as="p"
-                style="tag"
+                styledAs="tag"
                 className="pt-1 font-light md:text-sm"
                 aria-hidden
               >
