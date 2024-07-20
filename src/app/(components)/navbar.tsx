@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export function Navbar() {
   return (
-    <nav className="grid grid-cols-2 items-center gap-16 md:grid-cols-6">
+    <nav className="appear delay-md grid grid-cols-2 items-center gap-16 md:grid-cols-6">
       <Link className="md:col-span-2" href={"/"}>
         <Logo />
         <p className="sr-only">Sebastian Prisacariu</p>

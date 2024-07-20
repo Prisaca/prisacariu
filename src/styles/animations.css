@@ -1,3 +1,7 @@
+:root {
+  --appear-bezier: cubic-bezier(0.32, 0.42, 0.08, 0.79);
+}
+
 @media (min-width: 768px) {
   @media (prefers-reduced-motion: no-preference) {
     .footer,
@@ -6,8 +10,7 @@
     }
     .footer__inview,
     .cta-section__inview {
-      animation: appearFromBottom 1.125s cubic-bezier(0.32, 0.42, 0.08, 0.79)
-        forwards;
+      animation: appearFromBottom 1.125s var(--appear-bezier) forwards;
     }
   }
 }
@@ -21,4 +24,31 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.delay-sm {
+  animation-delay: 0.25s;
+}
+.delay-md {
+  animation-delay: 0.5s;
+}
+.delay-lg {
+  animation-delay: 1s;
+}
+
+.appear {
+  opacity: 0;
+  animation: appear 1s ease-out forwards;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
 }
