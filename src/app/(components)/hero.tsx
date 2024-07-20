@@ -4,14 +4,14 @@ import Link from "next/link";
 
 const config = {
   hero_titles: {
-    base_speed: -0.04,
-    stagger_speed: 0.02,
+    base_speed: -0.01,
+    stagger_speed: -0.01,
   },
 };
 
 export function Hero() {
   return (
-    <section id="hero" className="pt-20">
+    <section id="hero" className="py-20 md:pb-0">
       <section id="main-hero" className="">
         <div id="main-hero-title" className="grid">
           <h1 className="grid md:grid-cols-6">

@@ -1,10 +1,15 @@
-.footer,
-.cta-section {
-  opacity: 0;
-}
-.footer__inview,
-.cta-section__inview {
-  animation: appearFromBottom 1.125s cubic-bezier(0.32, 0.42, 0.08, 0.79) forwards;
+@media (min-width: 768px) {
+  @media (prefers-reduced-motion: no-preference) {
+    .footer,
+    .cta-section {
+      opacity: 0;
+    }
+    .footer__inview,
+    .cta-section__inview {
+      animation: appearFromBottom 1.125s cubic-bezier(0.32, 0.42, 0.08, 0.79)
+        forwards;
+    }
+  }
 }
 
 @keyframes appearFromBottom {
