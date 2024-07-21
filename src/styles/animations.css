@@ -73,10 +73,8 @@
 
   /* best for single words on display titles */
   .stagger-animation {
-    @media (min-width: 768px) {
-      & .staggered-letter-word {
-        transform: translateY(100%);
-      }
+    & .staggered-letter-word {
+      transform: translateY(100%);
     }
 
     &.active .staggered-letter-word {
@@ -85,6 +83,17 @@
         500ms + var(--staggered-sentence) * var(--stagger-length) *
           var(--stagger-length) * 3ms + var(--stagger-index) * 60ms
       );
+    }
+
+    @media (max-width: 768px) {
+      & .staggered-letter-word {
+        animation: letterSlideUp 0.5s cubic-bezier(0.19, 0.5, 0.41, 0.96)
+          forwards;
+        animation-delay: calc(
+          500ms + var(--staggered-sentence) * var(--stagger-length) *
+            var(--stagger-length) * 3ms + var(--stagger-index) * 60ms
+        );
+      }
     }
   }
 
@@ -97,6 +106,16 @@
           var(--stagger-length) * var(--stagger-length) * 0.75ms +
           var(--stagger-index) * 30ms
       );
+    }
+    @media (max-width: 768px) {
+      & .staggered-letter-word {
+        animation-duration: 0.3s;
+        animation-delay: calc(
+          var(--staggered-sentence) * 25ms + var(--staggered-sentence) *
+            var(--stagger-length) * var(--stagger-length) * 0.75ms +
+            var(--stagger-index) * 30ms
+        );
+      }
     }
   }
 }
