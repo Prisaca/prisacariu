@@ -46,10 +46,12 @@
     animation: appear 0.5s ease-out forwards;
   }
 
-  &.hero-image-appear {
-    animation-delay: 1.5s;
-    animation: appearFromBottom 0.5s cubic-bezier(0.19, 0.5, 0.41, 0.96)
-      forwards;
+  @media (prefers-reduced-motion: no-preference) {
+    &.hero-image-appear {
+      animation-delay: 1.5s;
+      animation: appearFromBottom 0.5s cubic-bezier(0.19, 0.5, 0.41, 0.96)
+        forwards;
+    }
   }
 }
 
@@ -69,30 +71,36 @@
     margin-bottom: -0.1em;
     transform-origin: bottom;
     display: inline-block;
+
+    .stagger-animation & {
+      transform: translateY(100%);
+    }
+
+    --slide-animation: letterSlideUp 0.5s cubic-bezier(0.19, 0.5, 0.41, 0.96)
+      forwards;
+    --slide-animation-delay: calc(
+      500ms + var(--staggered-sentence) * var(--stagger-length) *
+        var(--stagger-length) * 3ms + var(--stagger-index) * 60ms
+    );
+    --slide-animation-paragraph-duration: 0.3s;
+    --slide-animation-delay-paragraph: calc(
+      var(--staggered-sentence) * 25ms + var(--staggered-sentence) *
+        var(--stagger-length) * var(--stagger-length) * 0.75ms +
+        var(--stagger-index) * 30ms
+    );
   }
 
   /* best for single words on display titles */
   .stagger-animation {
-    & .staggered-letter-word {
-      transform: translateY(100%);
-    }
-
     &.active .staggered-letter-word {
-      animation: letterSlideUp 0.5s cubic-bezier(0.19, 0.5, 0.41, 0.96) forwards;
-      animation-delay: calc(
-        500ms + var(--staggered-sentence) * var(--stagger-length) *
-          var(--stagger-length) * 3ms + var(--stagger-index) * 60ms
-      );
+      animation: var(--slide-animation);
+      animation-delay: var(--slide-animation-delay);
     }
-
+    /* on mobile we don't have an active property - since no lenis */
     @media (max-width: 768px) {
       & .staggered-letter-word {
-        animation: letterSlideUp 0.5s cubic-bezier(0.19, 0.5, 0.41, 0.96)
-          forwards;
-        animation-delay: calc(
-          500ms + var(--staggered-sentence) * var(--stagger-length) *
-            var(--stagger-length) * 3ms + var(--stagger-index) * 60ms
-        );
+        animation: var(--slide-animation);
+        animation-delay: var(--slide-animation-delay);
       }
     }
   }
@@ -100,21 +108,14 @@
   /* best for paragraphs */
   .stagger-animation-long {
     &.active .staggered-letter-word {
-      animation-duration: 0.3s;
-      animation-delay: calc(
-        var(--staggered-sentence) * 25ms + var(--staggered-sentence) *
-          var(--stagger-length) * var(--stagger-length) * 0.75ms +
-          var(--stagger-index) * 30ms
-      );
+      animation-duration: var(--slide-animation-paragraph-duration);
+      animation-delay: var(--slide-animation-delay-paragraph);
     }
+    /* on mobile we don't have an active property - since no lenis */
     @media (max-width: 768px) {
       & .staggered-letter-word {
-        animation-duration: 0.3s;
-        animation-delay: calc(
-          var(--staggered-sentence) * 25ms + var(--staggered-sentence) *
-            var(--stagger-length) * var(--stagger-length) * 0.75ms +
-            var(--stagger-index) * 30ms
-        );
+        animation-duration: var(--slide-animation-paragraph-duration);
+        animation-delay: var(--slide-animation-delay-paragraph);
       }
     }
   }
