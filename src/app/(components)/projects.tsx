@@ -22,7 +22,7 @@ const articles = [
       },
       {
         label: "Designed by",
-        answers: ["Bielke&Yang"],
+        answers: ["Bleed"],
       },
       {
         label: "YEAR",
@@ -54,6 +54,10 @@ const articles = [
       {
         label: "Developed By",
         answers: ["Frend"],
+      },
+      {
+        label: "Designed by",
+        answers: ["TRY"],
       },
       {
         label: "YEAR",
