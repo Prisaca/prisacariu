@@ -14,7 +14,7 @@ export function Hero() {
   return (
     <section id="hero" className="py-20 md:pb-0">
       <section id="main-hero" className="">
-        <div id="main-hero-title" className="grid">
+        <div id="main-hero-title" className="relative grid">
           <h1 className="stagger-animation active grid md:grid-cols-6">
             <Text
               as="div"
@@ -73,6 +73,41 @@ export function Hero() {
               <WordByLetter>PRODUCTS</WordByLetter>
             </Text>
           </h1>
+          <Link
+            href="mailto:sebastian@prisacariu.com"
+            className="appear appear-delay-150 absolute right-0 top-full z-10 mt-4 hidden text-left md:block [&>*]:text-xs"
+            data-scroll
+            data-scroll-offset="50px,10%"
+            data-scroll-class="active"
+          >
+            <div className="animated-button">
+              <Text
+                as="p"
+                styledAs="tag"
+                className="uppercase opacity-75"
+                style={{ fontSize: "8px", lineHeight: "1em" }}
+              >
+                Email me
+              </Text>
+              <div className="animated-button-content">
+                <Text
+                  as="p"
+                  styledAs="tag"
+                  className="pt-1 font-light md:text-sm"
+                >
+                  sebastian@prisacariu.com
+                </Text>
+                <Text
+                  as="p"
+                  styledAs="tag"
+                  className="pt-1 font-light md:text-sm"
+                  aria-hidden
+                >
+                  sebastian@prisacariu.com
+                </Text>
+              </div>
+            </div>
+          </Link>
         </div>
       </section>
       <div data-scroll data-scroll-speed="0.375">
@@ -106,7 +141,7 @@ export function Hero() {
           data-scroll-offset="20%,20%"
           data-scroll-class="active"
         >
-          <p className="font-monument text-secondary-foreground text-[3vw] leading-[1.4em] md:text-right md:text-[1.125vw]">
+          <p className="font-monument text-[3vw] leading-[1.4em] text-secondary-foreground md:text-right md:text-[1.125vw]">
             Hey there!
           </p>
           <Text
@@ -130,7 +165,7 @@ export function Hero() {
             <Text
               as="p"
               styledAs="tag"
-              className="text-secondary-foreground font-light opacity-75 md:text-sm"
+              className="font-light text-secondary-foreground opacity-75 md:text-sm"
             >
               Email me
             </Text>

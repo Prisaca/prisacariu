@@ -53,6 +53,10 @@
         forwards;
     }
   }
+
+  &.appear-delay-150 {
+    animation-delay: 1.5s;
+  }
 }
 
 @keyframes appear {

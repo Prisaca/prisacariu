@@ -39,6 +39,7 @@ export function Navbar() {
             </Text>
           </li>
         </ul>
+
         {/* <button className="flex items-start justify-end">
           <Burger />
         </button> */}
